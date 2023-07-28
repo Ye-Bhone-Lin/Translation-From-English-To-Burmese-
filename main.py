@@ -6,6 +6,9 @@ from streamlit_lottie import st_lottie
 import tempfile
 import os
 import requests
+import webbrowser
+from pytube import YouTube
+
 #from PIL import Image
 st.set_page_config(page_title='Translation from English to Burmese', page_icon='🌐')
 
@@ -66,3 +69,20 @@ if uploaded_file is not None:
 else:
     st.warning('You need to upload a video file.')
 
+def stream_youtube_video(youtube_url):
+    yt = YouTube(youtube_url)
+    video_stream = yt.streams.filter(progressive=True, file_extension="mp4").first()
+    return video_stream
+st.header('You can paste a YouTube Link in this part :pushpin:')
+youtube_url = st.text_input('Paste the Youtube Link in here(:red[As soon as you paste the link, the error will be gone])')
+video_stream = stream_youtube_video(youtube_url)
+st.components.v1.iframe(video_stream.url, width=800, height=500)
+
+English1,Burmese1 = st.columns(2)
+transcript = transcriber.transcribe(video_stream.url)
+with English1:
+    st.caption('_English_')
+    st.write(transcript.text)
+with Burmese1:
+    st.caption('_Burmese_')
+    st.write(translate_to_burmese(transcript.text))
