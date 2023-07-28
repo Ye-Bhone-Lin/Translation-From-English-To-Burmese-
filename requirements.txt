@@ -72,6 +72,7 @@ soupsieve==2.4.1
 streamlit==1.25.0
 streamlit-embedcode==0.1.2
 streamlit-folium==0.11.1
+streamlit-lottie==0.0.5
 streamlit-option-menu==0.3.6
 tenacity==8.2.2
 threadpoolctl==3.1.0
