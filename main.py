@@ -66,11 +66,3 @@ if uploaded_file is not None:
 else:
     st.warning('You need to upload a video file.')
 
-
-
-
-    
-
-else:
-    st.warning('You need to upload a video file.')
-
