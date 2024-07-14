@@ -9,10 +9,15 @@ This project aims to provide accurate translations from English to Burmese using
 
 ### Installation 
 Clone the repository:
+
 ```git clone https://github.com/Ye-Bhone-Lin/Translation-From-English-To-Burmese-.git```
+
 Navigate to the project directory:
+
 ```cd Translation-From-English-To-Burmese-```
+
 Install the required dependencies:
+
 ```pip install -r requirements.txt```
 
 ### References
